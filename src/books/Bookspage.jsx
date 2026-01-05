@@ -6,6 +6,7 @@ export const BooksPage = () => {
   const syncBooks = async () => {
     const data = await getBooks();
     setBooks(data);
+    console.log(data);
   };
 
   useEffect(() => {
