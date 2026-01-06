@@ -26,31 +26,19 @@ export const Register = () => {
     <>
       <h1>Register for an account</h1>
       <form action={tryRegister}>
-        <label>
-          First Name
-          <input
-            type="text"
-            name="firstName"
-            required
-            placeholder="First Name"
-          />
-        </label>
-        <label>
-          Last Name
-          <input type="text" name="lastName" required placeholder="Last Name" />
-        </label>
-        <label>
-          Email
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="you@example.com"
-          />
-        </label>
-        <label>
-          <input type="text" name="password" required placeholder="Password" />
-        </label>
+        <input type="text" name="firstName" required placeholder="First Name" />
+
+        <input type="text" name="lastName" required placeholder="Last Name" />
+
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@example.com"
+        />
+
+        <input type="text" name="password" required placeholder="Password" />
+
         <button>Register</button>
         {error && <p role="alert">{error}</p>}
       </form>
