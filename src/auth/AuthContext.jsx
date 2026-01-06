@@ -22,24 +22,24 @@ export const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     const response = await fetch(API + "/users/login", {
       method: "POST",
-      headers: {"Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
     });
     const result = await response.json();
-    if(!response.ok) {
+    if (!response.ok) {
       throw Error(result.message);
     }
     setToken(result.token);
-  }
+  };
 
   const logout = () => setToken(null);
 
-  const value = {token, register, login, logout};
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  const value = { token, register, login, logout };
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth() {
+export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) throw Error(`useAuth must be used within AuthProvider`);
   return context;
-}
+};

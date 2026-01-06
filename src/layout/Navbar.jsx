@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 
 export const Navbar = () => {
+  const { token, logout } = useAuth();
   return (
     <header>
       <a href="/" className="logo">
@@ -14,14 +16,14 @@ export const Navbar = () => {
         <NavLink to="/account" className="nav-link">
           Account
         </NavLink>
-        {/* {token ? (
+        {token ? (
           <a onClick={() => logout()}>Log out</a>
         ) : (
           <>
             <NavLink to="register">Register</NavLink>
             <NavLink to="login">Log in</NavLink>
           </>
-        )} */}
+        )}
       </nav>
     </header>
   );
