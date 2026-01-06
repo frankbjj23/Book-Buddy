@@ -7,16 +7,18 @@ export const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
-  const tryRegister = async (formData) => {
+  const tryRegister = async (event) => {
+    event.preventDefault();
     setError(null);
 
-    const firstName = formData.get("firstName");
-    const lastName = formData.get("lastName");
+    const formData = new FormData(event.currentTarget);
+    const firstname = formData.get("firstname");
+    const lastname = formData.get("lastname");
     const email = formData.get("email");
     const password = formData.get("password");
 
     try {
-      await register({ firstName, lastName, email, password });
+      await register({ firstname, lastname, email, password });
       navigate("/books");
     } catch (e) {
       setError(e.message);
@@ -25,10 +27,10 @@ export const Register = () => {
   return (
     <>
       <h1>Register for an account</h1>
-      <form action={tryRegister}>
-        <input type="text" name="firstName" required placeholder="First Name" />
+      <form onSubmit={tryRegister}>
+        <input type="text" name="firstname" required placeholder="First Name" />
 
-        <input type="text" name="lastName" required placeholder="Last Name" />
+        <input type="text" name="lastname" required placeholder="Last Name" />
 
         <input
           type="email"

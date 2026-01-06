@@ -17,7 +17,9 @@ export const Navbar = () => {
           Account
         </NavLink>
         {token ? (
-          <a onClick={() => logout()}>Log out</a>
+          <a href="#" onClick={() => logout()}>
+            Log out
+          </a>
         ) : (
           <>
             <NavLink to="register">Register</NavLink>
