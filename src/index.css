@@ -1,8 +1,126 @@
-#bookImage {
-  height: 200px;
-  width: 150px;
+:root {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .logo {
-  height: 200px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+}
+
+nav a,
+nav .nav-link {
+  margin-right: 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 16px;
+  list-style: none;
+}
+
+#bookListContainer {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+#bookImage {
+  height: 160px;
+  width: 110px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+h1,
+h2 {
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 6px 0;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #aaa;
+  background: #eee;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e2e2e2;
+}
+
+.book-detail img {
+  width: 220px;
+  height: 320px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+form {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  max-width: 360px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: 2px solid #c9defd;
+  border-color: #7aa7e9;
 }

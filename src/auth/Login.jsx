@@ -11,10 +11,10 @@ export const Login = () => {
   const tryLogin = async (formData) => {
     setError(null);
 
-    const username = formData.get("username");
+    const email = formData.get("email");
     const password = formData.get("password");
     try {
-      await login({ username, password });
+      await login({ email, password });
       navigate("/books");
     } catch (e) {
       setError(e.message);
@@ -25,7 +25,7 @@ export const Login = () => {
     <>
       <h1>Log in to your account</h1>
       <form action={tryLogin}>
-        <input type="text" name="username" required placeholder="Username" />
+        <input type="email" name="email" required placeholder="Email" />
         <input type="text" name="password" required placeholder="Password" />
         <button>Login</button>
         {error && <p role="alert">{error}</p>}
