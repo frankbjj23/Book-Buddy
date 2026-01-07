@@ -5,6 +5,8 @@ import { useAuth } from "../auth/AuthContext";
 
 export const BooksPage = () => {
   const [books, setBooks] = useState([]);
+  const [search, setSearch] = useState("");
+
   const [reservations, setReservations] = useState([]);
   const { token } = useAuth();
 
@@ -27,10 +29,26 @@ export const BooksPage = () => {
     })();
   }, [token]);
 
+  const filteredBooks = books.filter((book) => {
+    const term = search.toLowerCase();
+    return (
+      book.title.toLowerCase().includes(term) ||
+      book.author.toLowerCase().includes(term)
+    );
+  });
+
   return (
     <>
       <h1>Catalog</h1>
-      <BookList books={books} reservations={reservations} />
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search by title or author"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <BookList books={filteredBooks} reservations={reservations} />
     </>
   );
 };

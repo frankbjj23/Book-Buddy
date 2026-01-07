@@ -124,3 +124,12 @@ input:focus {
   outline: 2px solid #c9defd;
   border-color: #7aa7e9;
 }
+
+.search-input {
+  width: 100%;
+  max-width: 360px;
+  padding: 8px;
+  margin: 10px 0 20px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
