@@ -6,6 +6,12 @@ Welcome to Book Buddy! Your task is to build out a functional client for [the Bo
 
 A [live demo of the finished project](https://fsa-book-buddy.netlify.app/) is available for reference.
 
+## Project Links
+
+- Official project notes: https://franksmithlll.com/book-buddy-react-api-workflow-frank-smith-iii
+- Portfolio entry: https://franksmithlll.com/projects#book-buddy
+- Hashnode summary: https://franksmithiii.hashnode.dev/book-buddy-project-notes-react-vite-api-workflows-and-account-actions
+
 ## Requirements
 
 ### All users should be able to:
