@@ -30,11 +30,3 @@ export const BookList = ({ books, reservations }) => {
     </ul>
   );
 };
-
-const BookListItem = ({ book }) => {
-  return (
-    <Link to={`/books/${book.id}`}>
-      <p>{book.title}</p>
-    </Link>
-  );
-};
